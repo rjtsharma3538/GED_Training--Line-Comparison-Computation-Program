@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 class Point {
 
@@ -38,6 +38,8 @@ class Line {
 
         return length;
     }
+
+
 }
 
 public class App {
@@ -51,17 +53,34 @@ public class App {
         double x1, x2, y1, y2;
 
         x1 = sc.nextDouble();
-        x2 = sc.nextDouble();
         y1 = sc.nextDouble();
+        x2 = sc.nextDouble();
         y2 = sc.nextDouble();
 
         Point p1 = new Point(x1, x2);
         Point p2 = new Point(x2, y2);
 
-        Line L = new Line(p1,p2);
+        Line L1 = new Line(p1, p2);
 
-        double length = L.getLength();
+        String len_1 = String.valueOf(L1.getLength());
 
-        System.out.println("Length of line is " + length);
+        x1 = sc.nextDouble();
+        y1 = sc.nextDouble();
+        x2 = sc.nextDouble();
+        y2 = sc.nextDouble();
+
+        p1 = new Point(x1, x2);
+        p2 = new Point(x2, y2);
+
+        Line L2 = new Line(p1, p2);
+
+        String len_2 = String.valueOf(L2.getLength());
+
+        if(len_1.equals(len_2))
+            System.out.println("Lines are equal and their length is " + len_1);
+        else 
+            System.out.println("Lines are not equal");
+
+        
     }
 }
